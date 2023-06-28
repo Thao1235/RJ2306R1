@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài Tập Validate email</title>
+
+    <script>
+        function validEmail() {
+        var email = document.getElementById('email');
+        var filter = /^[A-Za-z0-9]+[A-Za-z0-9]*@[A-Za-z0-9]+(\.[A-Za-z0-9]+)$/;
+        if (!filter.test(email.value)) {
+            alert('Email nhập chưa hợp lệ. Hãy nhập lại email khác.\nExample@gmail.com');
+            email.focus;
+            return false;
+        }
+        else
+        {
+            alert('Email nhập hợp lệ.');
+        }
+    }
+    </script>
+
+</head>
+<body>
+    <form name="form1" id="form1" method="post">
+        <input type="text" name="email" id="email" size="40">
+        <input type="button" name="check" value="Check" onclick="validEmail();">
+    </form>
+</body>
+</html>
