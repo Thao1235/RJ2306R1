@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sử dụng map để thao tác với mảng dữ liệu</title>
+</head>
+<body>
+    <!-- In ra tất cả mã khoa học của các loài chim trong mảng dữ liệu. -->
+    <script>
+        const birds = [
+        {"ID": "DV8", "Name": "Eurasian Collared-Dove", "Type": "Dove" },
+        {"ID": "HK12", "Name": "Bald Eagle", "Type": "Hawk" },
+        {"ID": "HK6", "Name": "Cooper's Hawk", "Type": "Hawk" },
+        {"ID": "SP11", "Name": "Bell's Sparrow", "Type": "Sparrow" },
+        {"ID": "DV2", "Name": "Mourning Dove", "Type": "Dove" }
+        ];
+
+        birds.map(function(item){
+            console.log(item.ID);
+            alert(item.ID);
+        });
+          
+    </script>
+</body>
+</html>
