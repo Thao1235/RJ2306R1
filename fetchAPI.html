@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xây dựng ứng dụng tìm ảnh động vui nhộn</title>
+</head>
+<body>
+    <div style="text-align: center; background-color: aquamarine;">
+        <h1 style="color: blue">FUNNY GIPHY IMAGES</h1>
+        <form action="" method="post">
+            <input type="text" id="name" placeholder="CAT">
+            <input type="button" id="btn" value="Search">
+            <input type="button" id="btn" value="Remove">
+        </form>
+        
+    </div>
+    <div id="img">
+        <img src="" alt="">
+    </div>
+        
+    <script>
+        let item = document.getElementById("img");
+        let picCat = fetch("http://api.giphy.com/v1/gifs/search?q=cat&api_key=ejaSc1gVSENQeaeWoDtsaGlATLByi0SF").then(res => {
+            return res.json()})
+        .then(res => {res.data.forEach(element => {
+            let img = document.createElement("img")
+            img.src = element.images.downsized.url;
+            item.appendChild(img)
+        });})
+        .then(res => { console.log(res.data)})
+        .catch(err => { console.log(err)});
+    </script>
+    
+</body>
+</html>
